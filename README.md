@@ -4,7 +4,6 @@
 ##  usersテーブル
 | columns  | type  |  Options |
 |---|---|---|
-|  id |   integer| null: false,  unique: true  |
 |  mail_address | string  |  null: false |
 | name |string| null: true |
 ### Association
@@ -15,7 +14,6 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id| integer |null: false, unique: true |
 |text| text |null: false |
 | image| integer| | 
 | user_id| integer | null: false|
@@ -27,7 +25,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id | integer |null: false, unique: true |
 |name | string |null: false |
 
 ### Association
@@ -37,7 +34,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id | integer |null: false, unique: true |
 |group_id | references  | null: false, foreign_key: true |
 |user_id| references  | null: false, foreign_key: true |
 ### Association
