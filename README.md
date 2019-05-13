@@ -4,7 +4,6 @@
 ##  usersテーブル
 | columns  | type  |  Options |
 |---|---|---|
-|  mail_address | string  |  null: false |
 | name |string| null: true, index:true |
 ### Association
 - has_many :messages
