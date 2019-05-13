@@ -5,7 +5,7 @@
 | columns  | type  |  Options |
 |---|---|---|
 |  mail_address | string  |  null: false |
-| name |string| null: true |
+| name |string| null: true, index:true |
 ### Association
 - has_many :messages
 - has_many :groups through: :group_users
