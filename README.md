@@ -15,7 +15,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |text| text | |
-| image| integer| | 
+| image| string| | 
 | user_id| integer | null: false|
 
 ### Association
