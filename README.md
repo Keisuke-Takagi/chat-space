@@ -2,11 +2,7 @@
 # Chat-spaceでのDB設計
 ---
 ##  usersテーブル
-| id  | mail_adress  |  name | 
-|---|---|---|---|
-|   1|  1234@mail.com |  name01 |   
-|  2| 2234@mail.com  |   name02|   
-| 3 |  3234@mail.com |  name02 |   
+
 
 | columns  | type  |  Options |
 |---|---|---|
@@ -19,11 +15,7 @@
 - has_many :group_users
 
 ## messagesテーブル
-| id  | text  |  image |  user_id
-|---|---|---|---|
-|  1 | おはよう  |  image01 |   1|
-|  2 |   こんにちは| null  |   2|
-|  3 |   おやすみ|  null |   1|
+
 
 |Column|Type|Options|
 |------|----|-------|
@@ -35,11 +27,7 @@
 - belongs_to :users
 
 ## groupsテーブル
-|   id|  name |   
-|---|---|---|---|
-|   1|   野球ずきサークル|   
-|   2|  サッカー好きサークル |   
-|   3|   バスケ好きサークル|   
+
 
 |Column|Type|Options|
 |------|----|-------|
@@ -51,11 +39,7 @@
 - has_many :group_users
 ## group_usersテーブル
 
-|  id |  group_id |  user_id |
-|---|---|---|
-| 1  |  1 | 1  |
-|   2|  3 |  2 |
-|  3 |  3 | 2  |
+
 
 |Column|Type|Options|
 |------|----|-------|
