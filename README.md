@@ -14,8 +14,8 @@
 |------|----|-------|
 |text| text | |
 | image| string| | 
-| user| reference | null: false|
-| group| integer|null: false|
+| user| reference | null: false, foreign_key: true|
+| group| reference |null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
