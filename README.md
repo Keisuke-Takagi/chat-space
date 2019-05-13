@@ -14,7 +14,7 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text| text |null: false |
+|text| text | |
 | image| integer| | 
 | user_id| integer | null: false|
 
