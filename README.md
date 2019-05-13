@@ -5,13 +5,13 @@
 | columns  | type  |  Options |
 |---|---|---|
 |  id |   integer| null: false,  unique: true  |
-|  mail_adress | string  |  null: false |
+|  mail_address | string  |  null: false |
 | name |string| null: true |
 ### Association
 - has_many :messages
 - has_many :groups through: :group_users
 - has_many :group_users
-
+- add_index :users, [:name, :mail_address]
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -21,8 +21,8 @@
 | user_id| integer | null: false|
 
 ### Association
-- belongs_to :users
-
+- belongs_to :user
+- add_index :messages, [:text, :user_id]
 ## groupsテーブル
 
 |Column|Type|Options|
@@ -43,4 +43,3 @@
 ### Association
 - belongs_to :user
 - belongs_to :group
-- 
