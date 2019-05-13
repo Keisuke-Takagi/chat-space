@@ -10,7 +10,6 @@
 - has_many :messages
 - has_many :groups through: :group_users
 - has_many :group_users
-- add_index :users, [:name, :mail_address]
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
