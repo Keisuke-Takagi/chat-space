@@ -22,7 +22,7 @@
 
 ### Association
 - belongs_to :user
-- add_index :messages, [:text, :user_id]
+- add_index :messages, [:text, :image]
 ## groupsテーブル
 
 |Column|Type|Options|
