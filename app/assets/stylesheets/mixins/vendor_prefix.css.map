@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "vendor_prefix.scss"
+    ],
+    "names": [],
+    "file": "vendor_prefix.css"
+}
