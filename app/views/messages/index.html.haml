@@ -10,9 +10,9 @@
       %ul.side-header__user-menu
         
 
-        -# %li.side-header__edit-user<名前変更ボタン>
+      -# %li.list ボタンa
 
-        -# %li.side-header__edit-user<設定ボタン>
+      -# %li.list ボタンb
 
     .groups
       %a{ :href => "グループリンク1"}
@@ -26,7 +26,7 @@
       %a{ :href => "グループリンク3"}    
         .group
           %p.group__group-name group3
-          %p.group__last-message 2222
+          %p.group__last-message 22
   
   .chat-main
 
@@ -55,7 +55,7 @@
       
         %label{ :class => "image-label", :for => "message_image"}
           
-          %i{ :class =>"fa fa-image"} ::before
+          %i{ :class =>"fa fa-image"} 
 
           %input{ :class =>"image-label__input", :type => "file", :name => "message[image]", :id => "message_image"}
 

@@ -1,0 +1,55 @@
+@mixin calc($property, $expression) { 
+  #{$property}: -moz-calc(#{$expression}); 
+  #{$property}: -o-calc(#{$expression}); 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+}
+
+$width: 300px;
+
+.flash-box {
+
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+
+  .chat-side{
+    float: left;
+    background-color: #2f3e51;
+    width: $width;
+    height: 100%;
+    .side-header {
+      height: 100px;
+      display: flex;
+      width: 100%;
+      background-color: #253141;
+    }
+  }
+
+  .chat-main {
+    float: left;
+    width: calc( 100vw - #{$width});
+    height: 100%;
+    .main-header {
+      height: 100px;
+      padding: 0 40px;
+      border-bottom: solid 1px gray;
+
+    }
+
+    .messages {
+      padding: 46px 40px;
+      background-color: #fafafa;
+      height: calc( 100vh - 190px);
+    }
+
+    // .form {
+    //   height: 90px;
+    //   padding: 20px 40px;
+    //   background-color: #ddd;
+    // }
+
+  }
+}
