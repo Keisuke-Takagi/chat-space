@@ -1,17 +1,18 @@
 .flash-box
-.wraper
+.wrapper
   
   .chat-side
     
     .side-header
     
-      %p.user-name test-user
+      %p.side-header__user-name test-user
           
-      %ul.user-menu
+      %ul.side-header__user-menu
+        
 
-        -# %li<名前変更ボタン>
+        -# %li.side-header__edit-user<名前変更ボタン>
 
-        -# %li<設定ボタン>
+        -# %li.side-header__edit-user<設定ボタン>
 
     .groups
       %a{ :href => "グループリンク1"}
@@ -26,40 +27,43 @@
         .group
           %p.group__group-name group3
           %p.group__last-message 2222
+  
   .chat-main
 
     .main-header
 
       .current-group{ :data_group_id => "1300"}
         %h2{ :class => "current-group_name"}
-        %ul{ :class => "member-list"}
-          %p member:
-          %li{ :class => "member-list__member"}
-            %p test-user
+          %ul{ :class => "member-list"}
+            %p member:
+            %li{ :class => "member-list__member"}
+              %p test-user
       %a{ :href => "Editリンク"}
         .main-header{ :class => "main-header__edit-btn"}
           %p EDIT
-        .main-header{ :class => "main-header__edit-btn"}
-          = link_to 'EdItのリンク', 'btn main-header__edit-btn'
         
 
       .message
+
+    .messages
+
     %form{ :class => "new-message", :id => "new_message", :method => "post", :action => "/", :enctype => "multipart/form-data", :accept_charset => "UTF-8"}
       %input{ :name => "utf8", :type => "hidden", :value => ""}
       %input{ :type => "hidden", :name => "authenticity_token", :value => ""}
       .input-box
         %input{ :placeholder => "type a message", :class => "input-box__text", :type => "text", :name => "message[content]", :id => "message_content"}
       
-        %label{ :class => "umage-label", :for => "message_image"}
+        %label{ :class => "image-label", :for => "message_image"}
           
-          %i{ :class =>"fa fa-image"} 
-            
+          %i{ :class =>"fa fa-image"} ::before
 
-          %input{ :class => "new-message__submit-btn", :type => "submit", :name => "commit", :value => "Send", :data-disable-with => "Send"}
+          %input{ :class =>"image-label__input", :type => "file", :name => "message[image]", :id => "message_image"}
+
+          %input{ :class => "new-message__submit-btn", :type => "submit", :name => "commit", :value => "Send", :"data-disable-with" => "Send"}
 
 
 
-%iframe{ :id => "blockbyte-bs-sidebar"}
+%iframe{ :id => "blockbyte-bs-sidebar", :class => "notranslate", :"data-pos" => "left"}
   %html{ :dir => "Itr"}
     %head
       %link(rel = "stylesheet" type = "text/css" href = "不明なフォント")
