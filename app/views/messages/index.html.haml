@@ -10,9 +10,9 @@
       %ul.side-header__user-menu
         
 
-      -# %li.list ボタンa
+      %li.list ボタンa
 
-      -# %li.list ボタンb
+      %li.list ボタンb
 
     .groups
       %a{ :href => "グループリンク1"}
@@ -46,18 +46,40 @@
       .message
 
     .messages
-
-    %form{ :class => "new-message", :id => "new_message", :method => "post", :action => "/", :enctype => "multipart/form-data", :accept_charset => "UTF-8"}
-      %input{ :name => "utf8", :type => "hidden", :value => ""}
-      %input{ :type => "hidden", :name => "authenticity_token", :value => ""}
-      .input-box
-        %input{ :placeholder => "type a message", :class => "input-box__text", :type => "text", :name => "message[content]", :id => "message_content"}
       
-        %label{ :class => "image-label", :for => "message_image"}
-          
-          %i{ :class =>"fa fa-image"} 
+      .message
+        
+        .upper-info
+         
+          %p.upper-info__user test-user
 
-          %input{ :class =>"image-label__input", :type => "file", :name => "message[image]", :id => "message_image"}
+          %p.upper-info__date 2019/05/16
+        
+        %p.messsage__text おはよう
+
+      .message
+        
+        .upper-info
+         
+          %p.upper-info__user test-user
+
+          %p.upper-info__date 2019/05/16
+        
+        %p.message__text おはよう
+
+    .form
+    
+      %form{ :class => "new-message", :id => "new_message", :method => "post", :action => "/", :enctype => "multipart/form-data", :accept_charset => "UTF-8"}
+        %input{ :name => "utf8", :type => "hidden", :value => ""}
+        %input{ :type => "hidden", :name => "authenticity_token", :value => ""}
+        .input-box
+          %input{ :placeholder => "type a message", :class => "input-box__text", :type => "text", :name => "message[content]", :id => "message_content"}
+        
+          %label{ :class => "image-label", :for => "message_image"}
+            
+            %i{ :class =>"fa fa-image"} 
+
+            %input{ :class =>"image-label__input", :type => "file", :name => "message[image]", :id => "message_image"}
 
           %input{ :class => "new-message__submit-btn", :type => "submit", :name => "commit", :value => "Send", :"data-disable-with" => "Send"}
 
