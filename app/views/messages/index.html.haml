@@ -33,11 +33,10 @@
     .main-header
 
       .current-group{ :data_group_id => "1300"}
-        %h2{ :class => "current-group_name"}
-          %ul{ :class => "member-list"}
-            %p member:
-            %li{ :class => "member-list__member"}
-              %p test-user
+        %h2.current-group_name group1
+        %ul.member-list
+          %p member:
+          %li.member-list__member test-user
       %a{ :href => "Editリンク"}
         .main-header{ :class => "main-header__edit-btn"}
           %p EDIT
@@ -81,7 +80,7 @@
 
             %input{ :class =>"image-label__input", :type => "file", :name => "message[image]", :id => "message_image"}
 
-          %input{ :class => "new-message__submit-btn", :type => "submit", :name => "commit", :value => "Send", :"data-disable-with" => "Send"}
+        %input{ :class => "new-message__submit-btn", :type => "submit", :name => "commit", :value => "Send", :"data-disable-with" => "Send"}
 
 
 
