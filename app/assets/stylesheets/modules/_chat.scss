@@ -51,7 +51,7 @@
 
     .chat-main {
       float: left;
-      width: calc( 100vw - #{$width-chat-side});
+      width: calc( 100% - #{$width-chat-side});
       
       .main-header {
         height: 100px;
