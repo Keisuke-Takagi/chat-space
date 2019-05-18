@@ -4,63 +4,65 @@
 
 .wrapper
   
-  = render 'shared/sidebar'
-  
-  .chat-main
+  .clearfix
 
-    .main-header
-
-      .current-group
-        %h2.current-group_name group1
-        
-        %ul.member-list member:
-
-        %li.member-list__name  test-user
-
-      %a{ :href => "Editリンク", :class => "edit"}
-        .main-header{ :class => "main-header__edit-btn"}
-          %p EDIT
-        
-
-      .message
-
-    .messages
-      
-      .message
-        
-        .upper-info
-         
-          %p.upper-info__user test-user
-
-          %p.upper-info__date 2019/05/16
-        
-        %p.messsage__text おはよう
-
-      .message
-        
-        .upper-info
-         
-          %p.upper-info__user test-user
-
-          %p.upper-info__date 2019/05/16
-        
-        %p.message__text おはよう
-
-    .form
+    = render 'shared/sidebar'
     
-      %form{ :class => "new-message", :id => "new_message", :method => "post", :action => "/", :enctype => "multipart/form-data", :accept_charset => "UTF-8"}
-        %input{ :class => "new-message__submit-btn", :type => "submit", :name => "commit", :value => "Send", :"data-disable-with" => "Send"}
-        .new-message
-          %input{ :name => "utf8", :type => "hidden", :value => ""}
-          %input{ :type => "hidden", :name => "authenticity_token", :value => ""}
-          .input-box
-            %input{ :placeholder => "type a message", :class => "input-box__text", :type => "text", :name => "message[content]", :id => "message_content"}
-          
-            %label{ :class => "image-label", :for => "message_image"}
-              
-              %i.fa.fa-image
+    .chat-main
 
-              %input{ :class =>"image-label__input", :type => "file", :name => "message[image]", :id => "message_image"}
+      .main-header
+
+        .current-group
+          %h2.current-group_name group1
+          
+          %ul.member-list member:
+
+          %li.member-list__name  test-user
+
+        %a{ :href => "Editリンク", :class => "edit"}
+          .main-header{ :class => "main-header__edit-btn"}
+            %p EDIT
+          
+
+        .message
+
+      .messages
+        
+        .message
+          
+          .upper-info
+          
+            %p.upper-info__user test-user
+
+            %p.upper-info__date 2019/05/16
+          
+          %p.messsage__text おはよう
+
+        .message
+          
+          .upper-info
+          
+            %p.upper-info__user test-user
+
+            %p.upper-info__date 2019/05/16
+          
+          %p.message__text おはよう
+
+      .form
+      
+        %form{ :class => "new-message", :id => "new_message", :method => "post", :action => "/", :enctype => "multipart/form-data", :accept_charset => "UTF-8"}
+          %input{ :class => "new-message__submit-btn", :type => "submit", :name => "commit", :value => "Send", :"data-disable-with" => "Send"}
+          .new-message
+            %input{ :name => "utf8", :type => "hidden", :value => ""}
+            %input{ :type => "hidden", :name => "authenticity_token", :value => ""}
+            .input-box
+              %input{ :placeholder => "type a message", :class => "input-box__text", :type => "text", :name => "message[content]", :id => "message_content"}
+            
+              %label{ :class => "image-label", :for => "message_image"}
+                
+                %i.fa.fa-image
+
+                %input{ :class =>"image-label__input", :type => "file", :name => "message[image]", :id => "message_image"}
 
        
 
