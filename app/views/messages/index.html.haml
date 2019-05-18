@@ -1,7 +1,9 @@
 .flash-box
 .wrapper
   .clearfix
+    
     = render 'shared/sidebar'
+    
     .chat-main
       .main-header
         .current-group
@@ -13,6 +15,7 @@
             %li.member-list__name  
             test-user2
 
+           
         = link_to(root_path, class: "edit") do
           .main-header{ :class => "main-header__edit-btn"}
             %p EDIT
