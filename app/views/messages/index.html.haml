@@ -1,45 +1,24 @@
 .flash-box
-
-
-
 .wrapper
-  
   .clearfix
-
     = render 'shared/sidebar'
-    
     .chat-main
-
       .main-header
-
         .current-group
           %h2.current-group_name group1
-          
           %ul.member-list member:
-
           %li.member-list__name  test-user
-
         %a{ :href => "Editリンク", :class => "edit"}
           .main-header{ :class => "main-header__edit-btn"}
             %p EDIT
-          
-
         .message
-
       .messages
-        
-        .message
-          
+        .message 
           .upper-info
-          
             %p.upper-info__user test-user
-
             %p.upper-info__date 2019/05/16
-          
           %p.messsage__text おはよう
-
         .message
-          
           .upper-info
           
             %p.upper-info__user test-user
