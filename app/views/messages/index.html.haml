@@ -1,0 +1,48 @@
+.flash-box
+.wrapper
+  .clearfix
+    = render 'shared/sidebar'
+    .chat-main
+      .main-header
+        .current-group
+          %h2.current-group_name group1
+          %ul.member-list    
+            member:
+            %li.member-list__name  
+            test-user
+            %li.member-list__name  
+            test-user2
+        = link_to(root_path, class: "edit") do
+          .main-header{ class: "main-header__edit-btn"}
+            %p EDIT
+        .message
+      .messages
+        .message 
+          .upper-info
+            %p.upper-info__user test-user
+            %p.upper-info__date 2019/05/16
+          %p.messsage__text おはよう
+        .message
+          .upper-info
+            %p.upper-info__user test-user
+            %p.upper-info__date 2019/05/16
+          %p.message__text おはよう
+      .form
+        %form{ class:  "new-message", id:  "new_message", method:  "post", action:  "/", enctype:  "multipart/form-data", accept_charset:  "UTF-8"}
+          %input{ class: "new-message__submit-btn", type:  "submit", name:  "commit", value:  "Send", data_disable_with:  "Send"}
+          .new-message
+            %input{ name:  "utf8", type:  "hidden", value:  ""}
+            %input{ type:  "hidden", name:  "authenticity_token", value:  ""}
+            .input-box
+              %input{ placeholder:  "type a message", class:  "input-box__text", type:  "text", name:  "message[content]", id:  "message_content"}
+              %label{ class:  "image-label", for:  "message_image"}
+                %i.fa.fa-image
+                %input{ class: "image-label__input", type:  "file", name:  "message[image]", id:  "message_image"}
+%iframe{ id:  "blockbyte-bs-sidebar", class:  "notranslate", data_pos:  "left"}
+  %html{ dir:  "Itr"}
+    %head
+      %link(rel = "stylesheet" type = "text/css" href = "不明なフォント")
+      %style{ class:  "blockbyte-bs-style"}
+    %body{ class:  "loaded"}
+.blocktype-bs-indicater
+
