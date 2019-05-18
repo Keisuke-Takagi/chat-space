@@ -1,18 +1,19 @@
 * {
   box-sizing: border-box;
 }
-
-.wrapper {
-
-  .clearfix {
-    display: block;
-    clear: both;
-    content: "";
+.flash-box{
+  background-color: #38AEF0;
+}
+.wrapper{
+  height: 100%;
+  width: 100%;
+  
     .chat-side{
       float: left;
       background-color: #2f3e51;
       width: $width-chat-side;
       color: white;
+      
       
       
       .side-header {
@@ -201,35 +202,45 @@
         }
       }
     }
- }
-}
-
-.user-menu {
-  
-}
-.member-list {
-  margin-top: 15px;
-  font-size: 12px;
-  color: #999999;
-  float: left;
-  &__name  {
+  .member-list {
     margin-top: 15px;
     font-size: 12px;
     color: #999999;
     float: left;
-    list-style: none;
+    &__name  {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #999999;
+      float: left;
+      list-style: none;
+    }
   }
-  
+
+  .user-menu {
+    display: flex;
+    
+  }
+
+  .fa.fa-edit {
+    color: white;
+  }
+
+
+  .fa.fa-cog {
+    color: white;
+  }
+
+ 
+}
+.clearfix::after {
+  height: 100%;
+  width: 100%;
+  display: block;
+  clear: both;
+  content: "";
 }
 
 
-.user-menu {
-  display: flex;
-  
-}
-.fa.fa-edit {
-  color: white;
-}
-.fa.fa-cog {
-  color: white;
-}
+
+
+
