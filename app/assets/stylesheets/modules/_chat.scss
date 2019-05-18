@@ -6,16 +6,12 @@
 }
 .wrapper{
   height: 100%;
-  width: 100%;
-  
+  width: 100%; 
     .chat-side{
       float: left;
       background-color: #2f3e51;
       width: $width-chat-side;
       color: white;
-      
-      
-      
       .side-header {
         clear: both;
         height: 100px;
@@ -26,10 +22,8 @@
         padding: 0 20px;
         font-weight: bold;
         align-items: center;
-        
         .side-header__user-name {
-
-      }
+        }
       }
       .groups {
         height: calc(100vh - #{$height_side_header});
@@ -48,35 +42,23 @@
         }
       }
     }
-    
-
     .chat-main {
       float: left;
       width: calc( 100% - #{$width-chat-side});
-      
       .main-header {
         height: 100px;
         padding: 0 40px;
         border-bottom: solid 1px #eee;
         display: flex;
-        
-
         .current-group {
           font-size: 20px;
           color: #333;
           margin-top: 35px;
-          
-
           &_name {
             font-size: 100%;
             font-weight: normal;
-          
-          
-
-            
           }
-        }
-          
+        } 
         .edit {
           position: absolute;
           right: 40px;
@@ -89,7 +71,6 @@
               margin-top: 30px;
               border: solid 1px #38aef0;
               color: #38aef0;
-              
             }
       }
 
@@ -98,45 +79,34 @@
         background-color: #fafafa;
         height: calc( 100vh - 190px);
         overflow: scroll;
-
         .message {
           padding-bottom: 40px;
-
           .upper-info {
             display: flex;
             margin-bottom: 10px;
-            
             .upper-info__user {
               font-size: 16px;
               font-weight: bold;
               color: #434a54;
             }
-
             .upper-info__date {
               color: #999999;
               font-size: 12px;
               margin-left: 10px;
             }
           }
-
           .message__text {
             font-size: 14px;
             margin-bottom: 10px;
             color: #434a54;
-
-            
           }
-        
         }
       }
-
       .form {
         height: 90px;
         padding: 20px 40px;
         background-color: #ddd;
-
         .new-message {
-          
           display: flex;
           height: 90px;
           width: 100%;
@@ -149,42 +119,32 @@
           right: 40px;
           z-index: 2;
           color: white;
-
         }
         .new-message {
-          
             display: flex;
             height: 90px;
             float: left;
             width: calc(100vw - 500px);
-          
             .input-box {
               position: relative;
               width: calc(100vw - 500px);
               float: left;
-            
-
-
               .input-box__text {
                 height: 50px;
                 width: 100%;
                 padding: 0 50px 0 10px;
                 color: #434a54;
                 border-style: none;
-                width: 100% 
-              
+                width: 100%;
               }
-
               .image-label {
                 font-size: 1.3rem;
                 position: absolute;
                 top: 10px;
                 right: 10px;
                 cursor: pointer;
-                
                 width: 30px;
                 height: 38px;
-              
                 .fa {
                   display: inline-block;
                   text-rendering: auto;
@@ -196,9 +156,8 @@
                 .image-label__input {
                   display: none;
                 }
-              }
-        
             }
+          }
         }
       }
     }
@@ -215,22 +174,16 @@
       list-style: none;
     }
   }
-
   .user-menu {
     display: flex;
     
   }
-
   .fa.fa-edit {
     color: white;
   }
-
-
   .fa.fa-cog {
     color: white;
   }
-
- 
 }
 .clearfix::after {
   display: block;
