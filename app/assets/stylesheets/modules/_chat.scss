@@ -66,7 +66,7 @@
           margin-top: 35px;
           
 
-          .current-group_name {
+          &_name {
             font-size: 100%;
             font-weight: normal;
           
@@ -212,17 +212,17 @@
   font-size: 12px;
   color: #999999;
   float: left;
-  
+  &__name  {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #999999;
+    float: left;
+    list-style: none;
+  }
   
 }
 
-.member-list__name  {
-  margin-top: 15px;
-  font-size: 12px;
-  color: #999999;
-  float: left;
-  list-style: none;
-}
+
 .user-menu {
   display: flex;
   
