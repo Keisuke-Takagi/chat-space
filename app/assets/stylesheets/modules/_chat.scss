@@ -30,13 +30,17 @@
         padding: 20px 20px 0;
         overflow: scroll;
         background-color: #2f3e51;
-        a {
-          color: white;
-          .group {
-            margin-bottom: 40px;
-            &__group-name {
-              font-size: 15px;
-              margin-bottom: 5px;
+        .group{
+          a {
+            color: white;
+            text-decoration: none;
+            .group__a-group{
+              margin-bottom: 40px;
+             
+              &__group-name {
+                font-size: 15px;
+                margin-bottom: 5px;
+              }
             }
           }
         }
@@ -181,6 +185,7 @@
   }
   .fa.fa-edit {
     color: white;
+    margin-right: 5px; 
   }
   .fa.fa-cog {
     color: white;
@@ -191,8 +196,3 @@
   clear: both;
   content: "";
 }
-
-
-
-
-
