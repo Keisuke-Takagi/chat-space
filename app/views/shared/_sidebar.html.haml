@@ -10,16 +10,11 @@
         = link_to edit_user_path(current_user) do
           %i.fa.fa-cog
   .groups
-    = link_to(root_path) do
-      .group
-        %p.group__group-name group1
-        %p.group__last-message 1111
-    = link_to(root_path) do
-      .group
-        %p.group__group-name group2
-        %p.group__last-message 1234
-    = link_to(root_path) do
-      .group
-        %p.group__group-name group3
-        %p.group__last-message 22
-        
+    .group
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group__a-group
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません。
