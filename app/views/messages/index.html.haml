@@ -17,12 +17,8 @@
             %p EDIT
       .messages
         = render @messages
-        .message 
-          .upper-info
-            %p.upper-info__user 
-              
-            %p.upper-info__date 2019/05/16
-          %p.messsage__text おはよう
+        
+   
       .form
         .new-message
           = form_for [@group, @message] do |f|
