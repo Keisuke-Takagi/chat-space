@@ -6,17 +6,17 @@ $(function() {
     var img = message.image ? `<img src= ${ message.image }>` : "";
     var html = 
   `<div class="message">
-  <div class="upper-info">
+    <div class="upper-info">
       <div class="upper-info__user">
-     ${message.user_name}
+        ${message.user_name}
       </div>
       <div class="upper-info__date">
-      ${message.date}
+        ${message.date}
       </div>
     </div>
     <div class="lower-meesage">
         <p class="message__text">
-        ${content}
+          ${content}
         </p>
     </div>
     ${img}
@@ -40,7 +40,9 @@ $(function() {
         var html = buildHTML(data)
         $('.messages').append(html);
         $('.messages').val('');
+
         location.reload();
+
       })
       .fail(function() {
         alert('情報を入力して下さい');
