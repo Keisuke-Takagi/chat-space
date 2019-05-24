@@ -43,7 +43,7 @@ $(function() {
         $('.messages').val('');
       })
       .fail(function() {
-        alert('error');
+        alert('情報を入力して下さい');
       });
       location.reload();
   });
