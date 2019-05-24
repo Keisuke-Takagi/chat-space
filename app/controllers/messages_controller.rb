@@ -10,8 +10,8 @@ class MessagesController < ApplicationController
     @message = @group.messages.new(message_params)
     if @message.save
       respond_to do |format|
-        format.html 
-        format.json { render json: @message} 
+        format.html and return
+        format.json {render json: @message}
       end
       redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
     else
