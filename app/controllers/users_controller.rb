@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.includes(:group_users)
+    respond_to do |format|
+      format.html {redirect_to controller: 'groups', action: 'new'}
+      format.json 
+    end
+  end
   def edit
   end
   def update
