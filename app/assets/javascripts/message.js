@@ -40,12 +40,14 @@ $(function() {
         var html = buildHTML(data)
         $('.messages').append(html);
         $('.messages').val('');
+        location.reload();
       })
       .fail(function() {
         alert('情報を入力して下さい');
       });
-      location.reload();
+ 
   });
+  
 });
 
   
