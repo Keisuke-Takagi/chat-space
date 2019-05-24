@@ -38,7 +38,6 @@ $(function() {
       })
       .done(function(data){
         var html = buildHTML(data)
-        console.log(html)
         $('.messages').append(html);
         $('.messages').val('');
       })
