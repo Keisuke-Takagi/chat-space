@@ -17,11 +17,9 @@
             %p EDIT
       .messages
         = render @messages
-        
-   
       .form
         .new-message
-          = form_for [@group, @message] do |f|
+          = form_for [@group, @message]  do |f|
             .form__mask
               = f.text_field :content, class: 'form__message', placeholder: 'type a message'
               .form__mask__image
@@ -29,7 +27,6 @@
                   = fa_icon 'picture-o', class: 'icon'
                   = f.file_field :image, class: 'hidden'
             = f.submit 'Send', class: 'form__submit'
-
 %iframe{ id:  "blockbyte-bs-sidebar", class:  "notranslate", data_pos:  "left"}
   %html{ dir:  "Itr"}
     %head
