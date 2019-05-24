@@ -1,4 +1,6 @@
 $(function() {
+  $('.messages').animate({
+    scrollTop: $('.messages')[0].scrollHeight}, '0');
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
@@ -19,15 +21,13 @@ $(function() {
     </div>
     ${img}
   </div>`
-  
     return html;
     }
     $(".new_message").on("submit", function(e) {
-      $('.messages').animate({
-        scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       e.preventDefault();
       var formData = new FormData(this)
       var url = $(this).attr('action')
+ 
       $.ajax({
         type: 'POST',
         url: url,
@@ -41,12 +41,12 @@ $(function() {
         console.log(html)
         $('.messages').append(html);
         $('.messages').val('');
-
       })
       .fail(function() {
-        return alert('error');
+        alert('error');
       });
-    });
-    });
+      location.reload();
+  });
+});
 
   
