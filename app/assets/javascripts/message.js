@@ -40,16 +40,15 @@ $(function() {
         var html = buildHTML(data)
         $('.messages').append(html);
         $('.messages').val('');
-
         location.reload();
-
+        $('.messages').reset()
       })
       .fail(function() {
         alert('情報を入力して下さい');
+        location.reload();
+        $('.messages').reset()
       });
- 
   });
-  
 });
 
   
