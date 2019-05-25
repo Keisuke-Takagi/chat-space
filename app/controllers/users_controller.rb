@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   def index
     @users = User.includes(:group_users)
-    respond_to do |format|
-      format.html {redirect_to controller: 'groups', action: 'new'}
-      format.json 
-    end
   end
   def edit
   end
@@ -15,6 +11,15 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  def serach
+    @search = Search.where('name LIKE(?)', "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html 
+      format.json 
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email)
