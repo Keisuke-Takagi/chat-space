@@ -11,7 +11,7 @@ $(function(){
 
   $(".edit_group").on("keyup", function() {
     var input = $(".user-search-field.chat-group-form__input").val();
-    console.log(input)
+    
       $.ajax({
         type: 'GET',
         url: '/users/search',
@@ -19,10 +19,12 @@ $(function(){
         dataType: 'json'
       })
     .done(function(users){
+      console.log(users)
       $(".user-search-field.chat-group-form__input").empty();
       if (users.length !== 0) {
         users.forEach(function(user){
         appendUser(user);
+        
      })
     }
     else {
