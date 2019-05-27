@@ -1,6 +1,6 @@
 $(function() {
-  // $('.messages').animate({
-  //   scrollTop: $('.messages')[0].scrollHeight}, '0');
+  $('.messages').animate({
+    scrollTop: $('.messages')[0].scrollHeight}, '0');
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
