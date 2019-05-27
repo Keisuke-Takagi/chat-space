@@ -2,21 +2,19 @@ $(function(){
   var search_list = $("#user-search-result")
   var chat_member_list = $("#chat-group-users")
   function appendUser(user) {
-    var html =`
-  <div class="chat-group-user clearfix">
-    <p class="chat-group-user__name">${user.name}</p>
-    <div class="add_button" data-user-id=${user.id} data-user-name=${user.name}>
-    追加</div>
-  </div>
-      `
-    search_list.append(html);
+  var html =`
+    <div class="chat-group-user clearfix">
+      <p class="chat-group-user__name">${user.name}</p>
+      <div class="add_button" data-user-id=${user.id} data-user-name=${user.name}>追加</div>
+    </div> `
+  search_list.append(html);
   }
   function appendErrMsgToHTML(msg) {
-    var html = `
+  var html = `
     <div class="chat-group-user clearfix">
     <p class="chat-group-user__name">${msg}</p>
     </div>`
-    search_list.append(html)
+  search_list.append(html)
   }
   function appendMember(member_name, member_id){
   var html = `
@@ -26,17 +24,15 @@ $(function(){
         ${member_name}<a class="delete_button" data-user-id=${member_id} data-user-name=${member_name}>削除</a>
       </p>
     </div>`
- 
   chat_member_list.append(html)
   }
-
   function removeMember(member_name, member_id){
-    var html =
-    `  <div class="chat-group-user clearfix">
-    <p class="chat-group-user__name">${member_name}</p>
-    <div class="add_button" data-user-id=${member_id} data-user-name=${member_name}>
-    追加</a>
-  </div>`
+  var html =`
+    <div class="chat-group-user clearfix">
+      <p class="chat-group-user__name">${member_name}</p>
+      <div class="add_button" data-user-id=${member_id} data-user-name=${member_name}>
+      追加</a>
+    </div>`
   search_list.append(html)
   }
   $("#user-search-field.chat-group-form__input").on("keyup", function() {
@@ -52,11 +48,10 @@ $(function(){
       if (users.length !== 0) {
         users.forEach(function(user){
         appendUser(user);
-     })
-    }
-    else {
-      appendErrMsgToHTML("一致するユーザー名はありません")
-     }
+      })
+      }else {
+        appendErrMsgToHTML("一致するユーザー名はありません")
+      }
     })
     .fail(function(){
       alert('ユーザー検索に失敗しました');
