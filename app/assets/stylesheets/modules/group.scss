@@ -129,5 +129,10 @@
 }
 .delete_button {
   color: #f05050;
+  position: relative;
   float: right;
+}
+.chat-group-current-user__name {
+  position: relative;
+  float: left;
 }

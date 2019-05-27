@@ -21,8 +21,9 @@ $(function(){
     <div class="chat-group-user clearfix" id="chat-group-user-${member_id}">
       <input class="chat-group-users__input" name="group[user_ids][]" type="hidden" value="${member_id}">
       <p class="chat-group-current-user__name">
-        ${member_name}<a class="delete_button" data-user-id=${member_id} data-user-name=${member_name}>削除</a>
+        ${member_name}
       </p>
+      <div class="delete_button" data-user-id=${member_id} data-user-name=${member_name}>削除</div>
     </div>`
   chat_member_list.append(html)
   }
@@ -31,7 +32,7 @@ $(function(){
     <div class="chat-group-user clearfix">
       <p class="chat-group-user__name">${member_name}</p>
       <div class="add_button" data-user-id=${member_id} data-user-name=${member_name}>
-      追加</a>
+      追加</div>
     </div>`
   search_list.append(html)
   }
@@ -50,7 +51,7 @@ $(function(){
         appendUser(user);
       })
       }else {
-        appendErrMsgToHTML("一致するユーザー名はありません")
+      appendErrMsgToHTML("一致するユーザー名はありません")
       }
     })
     .fail(function(){
