@@ -1,5 +1,4 @@
 $(function(){
-  var search_list = $("#user-search-result")
   var chat_member_list = $("#chat-group-users")
   function appendUser(user) {
   var html =`
@@ -34,7 +33,7 @@ $(function(){
       <div class="add_button" data-user-id=${member_id} data-user-name=${member_name}>
       追加</div>
     </div>`
-  search_list.append(html)
+    $("#user-search-result").append(html)
   }
   $("#user-search-field.chat-group-form__input").on("keyup", function() {
     var input = $("#user-search-field.chat-group-form__input").val();
