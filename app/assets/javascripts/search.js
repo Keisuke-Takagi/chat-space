@@ -6,7 +6,7 @@ $(function(){
       <p class="chat-group-user__name">${user.name}</p>
       <div class="add_button" data-user-id=${user.id} data-user-name=${user.name}>追加</div>
     </div> `
-  search_list.append(html);
+    $("#user-search-result").append(html);
   }
   function appendErrMsgToHTML(msg) {
   var html = `
@@ -58,14 +58,14 @@ $(function(){
     });
    });
    $(document).on("click", ".add_button", function () {
-    var chat_member_name = $(this).attr("data-user-name")
-    var chat_member_id = $(this).attr("data-user-id")
+    var chat_member_name = $(this).data("user-name")
+    var chat_member_id = $(this).data("user-id")
     appendMember(chat_member_name,chat_member_id);  
     $(this).parent().remove()
    });
    $(document).on("click", ".delete_button", function(){
-     var chat_member = $(this).attr("data-user-name")
-     var chat_member_id = $(this).attr("data-user-id")
+     var chat_member = $(this).data("user-name")
+     var chat_member_id = $(this).data("user-id")
      removeMember(chat_member, chat_member_id)
      $(this).parent().remove()
      });
