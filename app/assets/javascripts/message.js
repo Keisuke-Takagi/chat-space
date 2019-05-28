@@ -119,7 +119,8 @@ $(function() {
     })
     .done(function(messages) {
       var insertHTML = '';
-       $.each(messages, function(message) {
+      console.log(messages)
+       $.each(messages, function(index,message) { 
         var html = buildMessageHTML(message) + insertHTML
         $('.messages').append(html);
       })
@@ -132,4 +133,3 @@ $(function() {
       setInterval(reloadMessages, 5000);
     });
 })
-
