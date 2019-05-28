@@ -119,15 +119,13 @@ $(function() {
     })
     .done(function(messages) {
       var insertHTML = '';
-       $.each(messages, function(index, message) {
-        console.log(message)
+       $.each(messages, function(message) {
         var html = buildMessageHTML(message) + insertHTML
-        console.log(html)
         $('.messages').append(html);
       })
      })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
   $(function() {
