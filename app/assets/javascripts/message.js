@@ -44,9 +44,9 @@ $(function() {
         ${img}
         </div>
         `
-$('.messages').animate({
-scrollTop: $('.messages')[0].scrollHeight}, '0');
-  return html;
+      $('.messages').animate({
+      scrollTop: $('.messages')[0].scrollHeight}, '0');
+        return html;
       }
     $(".new_message").on("submit", function(e) {
       e.preventDefault();
