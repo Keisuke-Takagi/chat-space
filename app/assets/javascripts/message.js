@@ -4,6 +4,28 @@ $(function() {
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
+    var html = 
+  `<div class="message">
+    <div class="upper-info">
+      <div class="upper-info__user">
+        ${message.user_name}
+      </div>
+      <div class="upper-info__date">
+        ${message.date}
+      </div>
+    </div>
+    <div class="lower-meesage">
+        <p class="message__text">
+          ${content}
+        </p>
+    </div>
+    ${img}
+  </div>`
+    return html;
+    }
+      var buildMessageHTML = function(message) {
+        var content = message.content ? `${ message.content }` : "";
+        var img = message.image_url ? `<img src= ${ message.image_url }>` : "";
         var html = 
         `<div class="message">
         <div class="upper-info">
@@ -20,67 +42,12 @@ $(function() {
             </p>
         </div>
         ${img}
-      </div>
+        </div>
         `
-      return html;
-    };
-      var buildMessageHTML = function(message) {
-          if (message.content && message.image.url) {
-            var html = '<div class="message" data-id=' + message.id + '>' +
-              '<div class="upper-info">' +
-                '<div class="upper-info__user">' +
-                  message.user_name +
-                '</div>' +
-                '<div class="upper-info__date">' +
-                  message.created_at +
-                '</div>' +
-              '</div>' +
-              '<div class="lower-message">' +
-                '<p class="message__text">' +
-                  message.content +
-                '</p>' +
-                '<img src="' + message.image.url + '" class="lower-message__image" >' +
-              '</div>' +
-            '</div>'
-            $('.messages').animate({
-              scrollTop: $('.messages')[0].scrollHeight}, '0');
-          } else if (message.content) {
-            var html = '<div class="message" data-id=' + message.id + '>' +
-              '<div class="upper-info">' +
-                '<div class="upper-info__user">' +
-                  message.user_name +
-                '</div>' +
-                '<div class="upper-info__date">' +
-                  message.created_at +
-                '</div>' +
-              '</div>' +
-              '<div class="lower-message">' +
-                '<p class="message__text">' +
-                  message.content +
-                '</p>' +
-              '</div>' +
-            '</div>'
-            $('.messages').animate({
-              scrollTop: $('.messages')[0].scrollHeight}, '0');
-          } else if (message.image.url) {
-            var html = '<div class="message" data-id=' + message.id + '>' +
-              '<div class="upper-info">' +
-                '<div class="upper-info__user">' +
-                  message.user_name +
-                '</div>' +
-                '<div class="upper-info__date">' +
-                  message.created_at +
-                '</div>' +
-              '</div>' +
-              '<div class="lower-message">' +
-                '<img src="' + message.image.url + '" class="lower-message__image" >' +
-              '</div>' +
-            '</div>'
-            $('.messages').animate({
-              scrollTop: $('.messages')[0].scrollHeight}, '0');
-          };
-          return html;
-        };
+$('.messages').animate({
+scrollTop: $('.messages')[0].scrollHeight}, '0');
+  return html;
+      }
     $(".new_message").on("submit", function(e) {
       e.preventDefault();
       var formData = new FormData(this)
@@ -107,6 +74,7 @@ $(function() {
       });
   });
   var reloadMessages = function() {
+    last_message_id = $('.message:last').data('id')
     var last_message_id = $('.message:last').data('id');
     var $dir = location.href.split("/");  
     var $dir2 = $dir[$dir.length -2];
@@ -116,9 +84,9 @@ $(function() {
       type: 'GET',
       dataType: 'json',
       data: {id: last_message_id},
-
     })
     .done(function(messages) {
+      console.log(messages)
       var insertHTML = '';
        $.each(messages, function(index,message) { 
         var html = buildMessageHTML(message) + insertHTML
