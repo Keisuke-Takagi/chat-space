@@ -22,8 +22,6 @@ $(function() {
         ${img}
       </div>
         `
-        console.log(html)
-        debugger
       return html;
     };
       var buildMessageHTML = function(message) {
@@ -118,10 +116,10 @@ $(function() {
       type: 'GET',
       dataType: 'json',
       data: {id: last_message_id},
+
     })
     .done(function(messages) {
       var insertHTML = '';
-      console.log(messages)
        $.each(messages, function(index,message) { 
         var html = buildMessageHTML(message) + insertHTML
         $('.messages').append(html);
