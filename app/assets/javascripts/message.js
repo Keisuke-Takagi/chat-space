@@ -74,7 +74,6 @@ $(function() {
       });
   });
   var reloadMessages = function() {
-    last_message_id = $('.message:last').data('id')
     var last_message_id = $('.message:last').data('id');
     var $dir = location.href.split("/");  
     var $dir2 = $dir[$dir.length -2];
