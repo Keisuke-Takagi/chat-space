@@ -1,6 +1,6 @@
 $(function() {
   $('.messages').animate({
-    scrollTop: $('.messages')[0].scrollHeight}, '0');
+    scrollTop: $('.messages')[0].scrollHeight}, '10000');
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
@@ -45,7 +45,7 @@ $(function() {
         </div>
         `
       $('.messages').animate({
-      scrollTop: $('.messages')[0].scrollHeight}, '0');
+      scrollTop: $('.messages')[0].scrollHeight}, '10000');
         return html;
       }
     $(".new_message").on("submit", function(e) {
@@ -89,6 +89,7 @@ $(function() {
        $.each(messages, function(index,message) { 
         var html = buildMessageHTML(message) + insertHTML
         $('.messages').append(html);
+        location.reload()
       })
      })
     .fail(function() {
