@@ -9,9 +9,9 @@ CarrierWave.configure do |config|
     provider: 'AWS',
     aws_access_key_id: Rails.application.secrets.aws_access_key_id,
     aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
-    region: 'ap-northeast-1' 
+    region: 'us-east-2c' 
   }
 
-  config.fog_directory  = 'chat-space-upload-test-packet'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-upload-test-packet'
+  config.fog_directory  = 'chat-space-test-packet'
+  config.asset_host = 'https://s3-us-east-2c.amazonaws.com/chat-space-test-packet'
 end
