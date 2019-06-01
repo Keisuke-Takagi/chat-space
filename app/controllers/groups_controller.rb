@@ -5,6 +5,8 @@ class GroupsController < ApplicationController
   end
   def new
     @group = Group.new
+    @member = @group.users
+    @current_user = current_user
     @group.users << current_user
   end
   def create
@@ -14,6 +16,10 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+  end
+  def edit
+    @member = @group.users
+    @current_user = current_user 
   end
   def update
     if @group.update(group_params)

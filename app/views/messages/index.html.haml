@@ -10,9 +10,9 @@
           %ul.member-list    
             member:
             %li.member-list__name  
-            test-user
-            %li.member-list__name  
-            test-user2
+            - @members.each do |mem|
+              = mem.name
+            
         = link_to 'edit', class: "edit" do
           .main-header{ class: "main-header__edit-btn"}
             %p EDIT

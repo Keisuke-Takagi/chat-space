@@ -1,9 +1,8 @@
 $(function() {
-  $('.messages').animate({
-    scrollTop: $('.messages')[0].scrollHeight}, '10000');
+  
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
-    var img = message.image ? `<img src= ${ message.image }>` : "";
+    var img = message.image ? `<img src= ${ message.image }>` : "" ;
     var html = 
   `<div class="message">
     <div class="upper-info">
@@ -11,7 +10,7 @@ $(function() {
         ${message.user_name}
       </div>
       <div class="upper-info__date">
-        ${message.date}
+        ${message.created_at}
       </div>
     </div>
     <div class="lower-meesage">
@@ -61,11 +60,15 @@ $(function() {
         contentType: false
       })
       .done(function(data){
+        $('.form__submit').prop('disabled',false)
         var html = buildHTML(data)
         $('.messages').append(html);
-        $('.messages').val('');
-        location.reload();
-        $('.messages').reset()
+        $('.messages').animate({
+          scrollTop: $('.messages')[0].scrollHeight}, '10000');
+        $('.form__message').val('');
+        // location.reload();
+        $('.form__message').reset()
+       
       })
       .fail(function() {
         alert('情報を入力して下さい');
