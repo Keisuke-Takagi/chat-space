@@ -15,6 +15,10 @@ class GroupsController < ApplicationController
       render :new
     end
   end
+  def edit
+    @member = @group.users
+    @current_user = current_user 
+  end
   def update
     if @group.update(group_params)
       redirect_to group_messages_path(@group), notice: 'グループを編集しました'

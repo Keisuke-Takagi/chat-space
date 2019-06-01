@@ -69,4 +69,7 @@ $(function(){
      removeMember(chat_member, chat_member_id)
      $(this).parent().remove()
      });
+   $(".a_delete_button").on("click", function(){
+     $(this).parent().remove()
+    });
 });
