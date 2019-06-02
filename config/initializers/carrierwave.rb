@@ -1,17 +1,17 @@
-# require 'carrierwave/storage/abstract'
-# require 'carrierwave/storage/file'
-# require 'carrierwave/storage/fog'
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
 
-# CarrierWave.configure do |config|
-#   config.storage = :fog
-#   config.fog_provider = 'fog/aws'
-#   config.fog_credentials = {
-#     provider: 'AWS',
-#     aws_access_key_id: Rails.application.secrets.aws_access_key_id,
-#     aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
-#     region: 'us-east-2c' 
-#   }
+CarrierWave.configure do |config|
+  config.storage = :fog
+  config.fog_provider = 'fog/aws'
+  config.fog_credentials = {
+    provider: 'AWS',
+    aws_access_key_id: Rails.application.secrets.aws_access_key_id,
+    aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
+    region: 'ap-northeast-1'
+  }
 
-#   config.fog_directory  = 'chat-space-test-packet'
-#   config.asset_host = 'https://s3-us-east-2c.amazonaws.com/chat-space-test-packet'
-# end
+  config.fog_directory  = '01chat-space-test'
+  config.asset_host = 'https://s3-ap-northeast-1.com.amazonaws.com/01chat-space-test'
+end
