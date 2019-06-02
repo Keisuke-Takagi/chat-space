@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',$(function(){
   var chat_member_list = $("#chat-group-users")
   function appendUser(user) {
   var html =`
@@ -72,4 +72,5 @@ $(function(){
    $(".a_delete_button").on("click", function(){
      $(this).parent().remove()
     });
-});
+})
+);

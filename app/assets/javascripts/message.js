@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load',$(function() {
   
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
@@ -103,3 +103,4 @@ $(function() {
       setInterval(reloadMessages, 5000);
     });
 })
+);
