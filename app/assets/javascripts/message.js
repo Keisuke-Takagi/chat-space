@@ -2,7 +2,7 @@ $(document).on('turbolinks:load',$(function() {
   
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
-    var img = message.image ? `<img src= ${ message.image }>` : "" ;
+    var img = message.image.url ? `<img src= ${ message.image.url }>` : "" ;
     var html = 
   `<div class="message">
     <div class="upper-info">
@@ -95,9 +95,7 @@ $(document).on('turbolinks:load',$(function() {
         location.reload()
       })
      })
-    .fail(function() {
-      alert('error');
-    });
+
   };
   $(function() {
       setInterval(reloadMessages, 5000);
