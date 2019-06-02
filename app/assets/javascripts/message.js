@@ -66,9 +66,9 @@ $(document).on('turbolinks:load',$(function() {
         $('.messages').animate({
           scrollTop: $('.messages')[0].scrollHeight}, '10000');
         $('.form__message').val('');
+        $('.hidden').val('')
         // location.reload();
-        $('.form__message').reset()
-       
+      
       })
       .fail(function() {
         alert('情報を入力して下さい');
