@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  def index
+  def search
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id)
     respond_to do |format|
       format.html 

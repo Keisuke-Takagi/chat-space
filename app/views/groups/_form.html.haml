@@ -24,7 +24,7 @@
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right 
       #chat-group-users
-        - @member.each do |mem|
+        - @group.users.each do |mem|
           #chat-group-user-22.chat-group-user.clearfix
             %input{class: "chat-group-users__input",name:  "group[user_ids][]", type:  "hidden", :value => current_user.id}/    
             - current_user = @current_user

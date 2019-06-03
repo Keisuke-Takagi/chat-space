@@ -97,11 +97,10 @@ $(document).on('turbolinks:load',(function() {
       })
      })
     .fail(function(){
-      alert('通信に失敗しました');
+      // alert('通信に失敗しました');
     })
   };
-  $(function() {
-      setInterval(reloadMessages, 5000);
-    });
+   {setInterval(reloadMessages, 5000);
+    };
 })
 );
