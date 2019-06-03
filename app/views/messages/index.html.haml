@@ -13,14 +13,14 @@
             - @members.each do |mem|
               = mem.name
             
-        = link_to 'edit', class: "edit" do
+        = link_to 'edit', class: "edit", data: {"turbolinks" => false} do
           .main-header{ class: "main-header__edit-btn"}
             %p EDIT
       .messages
         = render @messages
       .form
         .new-message
-          = form_for [@group, @message]  do |f|
+          = form_for [@group, @message] do |f|
             .form__mask
               = f.text_field :content, class: 'form__message', placeholder: 'type a message'
               .form__mask__image

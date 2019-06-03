@@ -2,7 +2,7 @@ $(document).on('turbolinks:load',$(function() {
   
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
-    var img = message.image ? `<img src= ${ message.image }>` : "" ;
+    var img = message.image.url ? `<img src= ${ message.image.url }>` : "" ;
     var html = 
   `<div class="message">
     <div class="upper-info">
@@ -66,9 +66,9 @@ $(document).on('turbolinks:load',$(function() {
         $('.messages').animate({
           scrollTop: $('.messages')[0].scrollHeight}, '10000');
         $('.form__message').val('');
+        $('.hidden').val('')
         // location.reload();
-        $('.form__message').reset()
-       
+      
       })
       .fail(function() {
         alert('情報を入力して下さい');
@@ -95,9 +95,7 @@ $(document).on('turbolinks:load',$(function() {
         location.reload()
       })
      })
-    .fail(function() {
-      alert('error');
-    });
+
   };
   $(function() {
       setInterval(reloadMessages, 5000);
