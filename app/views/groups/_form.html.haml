@@ -24,10 +24,10 @@
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right 
       #chat-group-users
-        - current_user = @current_user
         - @member.each do |mem|
           #chat-group-user-22.chat-group-user.clearfix
             %input{class: "chat-group-users__input",name:  "group[user_ids][]", type:  "hidden", :value => current_user.id}/    
+            - current_user = @current_user
             - if mem == current_user
               %p.chat-group-current-user__name
                 = mem.name
