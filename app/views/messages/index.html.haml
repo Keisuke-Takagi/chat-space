@@ -13,7 +13,7 @@
             - @members.each do |mem|
               = mem.name
             
-        = link_to 'edit', class: "edit" do
+        = link_to 'edit', class: "edit", data: {"turbolinks" => false} do
           .main-header{ class: "main-header__edit-btn"}
             %p EDIT
       .messages
