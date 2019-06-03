@@ -72,7 +72,8 @@ $(document).on('turbolinks:load',(function() {
       })
       .fail(function() {
         alert('情報を入力して下さい');
-        $('.messages').reset()
+        $('.form__submit').prop('disabled',false)
+        location.reload
       });
   });
   var reloadMessages = function() {
