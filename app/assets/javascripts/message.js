@@ -1,10 +1,11 @@
-$(document).on('turbolinks:load',$(function() {
+$(document).on('turbolinks:load',(function() {
   
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
     var img = message.image.url ? `<img src= ${ message.image.url }>` : "" ;
+    var id = message.id
     var html = 
-  `<div class="message">
+  `<div class="message" data-id ="${id}">
     <div class="upper-info">
       <div class="upper-info__user">
         ${message.user_name}
@@ -20,13 +21,15 @@ $(document).on('turbolinks:load',$(function() {
     </div>
     ${img}
   </div>`
+  var id = null;
     return html;
     }
       var buildMessageHTML = function(message) {
         var content = message.content ? `${ message.content }` : "";
-        var img = message.image_url ? `<img src= ${ message.image_url }>` : "";
+        var img = message.image.url ? `<img src= ${ message.image.url }>` : "";
+        var id = message.id
         var html = 
-        `<div class="message">
+        `<div class="message" data-id ="${id}">
         <div class="upper-info">
           <div class="upper-info__user">
             ${message.user_name}
@@ -43,8 +46,7 @@ $(document).on('turbolinks:load',$(function() {
         ${img}
         </div>
         `
-      $('.messages').animate({
-      scrollTop: $('.messages')[0].scrollHeight}, '10000');
+        id = null;
         return html;
       }
     $(".new_message").on("submit", function(e) {
@@ -67,12 +69,9 @@ $(document).on('turbolinks:load',$(function() {
           scrollTop: $('.messages')[0].scrollHeight}, '10000');
         $('.form__message').val('');
         $('.hidden').val('')
-        // location.reload();
-      
       })
       .fail(function() {
         alert('情報を入力して下さい');
-        location.reload();
         $('.messages').reset()
       });
   });
@@ -89,13 +88,17 @@ $(document).on('turbolinks:load',$(function() {
     })
     .done(function(messages) {
       var insertHTML = '';
+      $('.messages').animate({
+        scrollTop: $('.messages')[0].scrollHeight}, '10000');
        $.each(messages, function(index,message) { 
         var html = buildMessageHTML(message) + insertHTML
         $('.messages').append(html);
-        location.reload()
+        last_message_id.splice(0, last_message_id.length);
       })
      })
-
+    .fail(function(){
+      alert('通信に失敗しました');
+    })
   };
   $(function() {
       setInterval(reloadMessages, 5000);
