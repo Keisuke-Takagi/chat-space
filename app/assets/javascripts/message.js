@@ -88,15 +88,25 @@ $(document).on('turbolinks:load',(function() {
       data: {id: last_message_id},
     })
     .done(function(messages) {
-      var insertHTML = '';
-      $('.messages').animate({
-        scrollTop: $('.messages')[0].scrollHeight}, '10000');
-       $.each(messages, function(index,message) { 
-        var html = buildMessageHTML(message) + insertHTML
-        $('.messages').append(html);
-        last_message_id.splice(0, last_message_id.length);
-      })
-     })
+      if(messages == old_messages){
+        var insertHTML = '';
+        $.each(messages, function(index,message) { 
+          var html = buildMessageHTML(message) + insertHTML
+          $('.messages').append(html);
+          last_message_id.splice(0, last_message_id.length);
+          old_messages = messages}) 
+      } else {
+          var insertHTML = '';
+          $('.messages').animate({
+            scrollTop: $('.messages')[0].scrollHeight}, '10000');
+           $.each(messages, function(index,message) { 
+            var html = buildMessageHTML(message) + insertHTML
+            $('.messages').append(html);
+            last_message_id.splice(0, last_message_id.length);
+            old_messages = messages
+          })
+        }
+      })     
     .fail(function(){
       // alert('通信に失敗しました');
     })
