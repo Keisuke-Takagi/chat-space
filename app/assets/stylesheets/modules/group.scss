@@ -141,3 +141,20 @@
   position: relative;
   float: right;
 }
+.ifrm {
+  width:1px;
+  height:2px;;
+  border:none;
+}
+.ifrm-container {
+  width:1px;
+  height:1px;
+  overflow:auto;
+  -webkit-overflow-scrolling:touch;
+  }
+iframe{
+  display: block;
+  width: 1px;
+  min-width: 100%;
+  *width: 100%;
+}
