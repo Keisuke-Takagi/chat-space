@@ -65,15 +65,14 @@ $(document).on('turbolinks:load',(function() {
         $('.form__submit').prop('disabled',false)
         var html = buildHTML(data)
         $('.messages').append(html);
+        var insertHTML = '';
         $('.messages').animate({
           scrollTop: $('.messages')[0].scrollHeight}, '10000');
-        $('.form__message').val('');
-        $('.hidden').val('')
-      })
+          $('.hidden').val('')
+        })
       .fail(function() {
         alert('情報を入力して下さい');
         $('.form__submit').prop('disabled',false)
-        location.reload
       });
   });
   var reloadMessages = function() {
@@ -87,31 +86,22 @@ $(document).on('turbolinks:load',(function() {
       dataType: 'json',
       data: {id: last_message_id},
     })
-    .done(function(messages) {
-      if(messages == old_messages){
-        var insertHTML = '';
-        $.each(messages, function(index,message) { 
-          var html = buildMessageHTML(message) + insertHTML
-          $('.messages').append(html);
-          last_message_id.splice(0, last_message_id.length);
-          old_messages = messages}) 
-      } else {
-          var insertHTML = '';
-          $('.messages').animate({
-            scrollTop: $('.messages')[0].scrollHeight}, '10000');
-           $.each(messages, function(index,message) { 
-            var html = buildMessageHTML(message) + insertHTML
-            $('.messages').append(html);
-            last_message_id.splice(0, last_message_id.length);
-            old_messages = messages
-          })
-        }
-      })     
+  .done(function(messages) {
+    var insertHTML = '';
+    $('.messages').animate({
+      scrollTop: $('.messages')[0].scrollHeight}, '10000');
+     $.each(messages, function(index,message) { 
+      var html = buildMessageHTML(message) + insertHTML
+      $('.messages').append(html);
+      last_message_id.splice(0, last_message_id.length);
+    })
+   })
     .fail(function(){
       // alert('通信に失敗しました');
     })
   };
-   {setInterval(reloadMessages, 5000);
-    };
-})
+  $(function() {
+    setInterval(reloadMessages, 5000);
+  });
+ })
 );
