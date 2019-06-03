@@ -79,15 +79,15 @@
       }
 
       .messages {
-        padding: 46px 40px;
+        padding: 23px 20px 0px 20px;
         background-color: #fafafa;
         height: calc( 100vh - 190px);
         overflow: scroll;
         .message {
-          padding-bottom: 40px;
+          padding-bottom: 5px;
           .upper-info {
             display: flex;
-            margin-bottom: 32px;
+            margin-bottom: 10px;
             .upper-info__user {
               font-size: 16px;
               font-weight: bold;

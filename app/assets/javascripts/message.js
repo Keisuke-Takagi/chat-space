@@ -89,9 +89,10 @@ $(document).on('turbolinks:load',(function() {
     })
   .done(function(messages) {
     var insertHTML = '';
-    $('.messages').animate({
-      scrollTop: $('.messages')[0].scrollHeight}, '10000');
+
      $.each(messages, function(index,message) { 
+      $('.messages').animate({
+        scrollTop: $('.messages')[0].scrollHeight}, '10000');
       var html = buildMessageHTML(message) + insertHTML
       $('.messages').append(html);
       last_message_id.splice(0, last_message_id.length);
