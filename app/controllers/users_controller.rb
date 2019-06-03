@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.includes(:group_users)
-  end
+  # def index
+  #   @users = User.includes(:group_users)
+  # end
+
   def edit
   end
   def update
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  def search
+  def index
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id)
     respond_to do |format|
       format.html 
