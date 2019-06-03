@@ -68,6 +68,7 @@ $(document).on('turbolinks:load',(function() {
         var insertHTML = '';
         $('.messages').animate({
           scrollTop: $('.messages')[0].scrollHeight}, '10000');
+          $('.form__message').val('');
           $('.hidden').val('')
         })
       .fail(function() {
