@@ -10,10 +10,10 @@ $(document).on('turbolinks:load',$(function(){
   }
   function appendErrMsgToHTML(msg) {
   var html = `
-    <div class="chat-group-user clearfix">
-    <p class="chat-group-user__name">${msg}</p>
-    </div>`
-  search_list.append(html)
+  <div class="chat-group-user clearfix">
+  <p class="chat-group-user__name">${msg}</p>
+  </div>`
+  $("#user-search-result").append(html)
   }
   function appendMember(member_name, member_id){
   var html = `
@@ -45,12 +45,14 @@ $(document).on('turbolinks:load',$(function(){
       })
     .done(function(users){
       $("#user-search-result").empty();
-      if (users.length !== 0) {
+      if (users.length != 0) {
+
         users.forEach(function(user){
         appendUser(user);
       })
-      }else {
-      appendErrMsgToHTML("一致するユーザー名はありません")
+      }else{
+     
+        appendErrMsgToHTML("一致するユーザー名はありません")
       }
     })
     .fail(function(){
