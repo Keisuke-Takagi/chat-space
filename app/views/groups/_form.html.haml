@@ -5,7 +5,6 @@
       %ul
         - group.errors.full_messages.each do |message|
           %li= message
-
   .chat-group-form__field
     .chat-group-form__field--left
       = f.label :name, class: 'chat-group-form__label'
@@ -25,13 +24,14 @@
     .chat-group-form__field--right 
       #chat-group-users
         - @group.users.each do |mem|
-          #chat-group-user-22.chat-group-user.clearfix
-            %input{class: "chat-group-users__input",name:  "group[user_ids][]", type:  "hidden", :value => current_user.id}/    
+          #chat-group-user-22.chat-group-user.clearfix    
             - current_user = @current_user
             - if mem == current_user
               %p.chat-group-current-user__name
                 = mem.name
+              %input{class: "chat-group-users__input",name:  "group[user_ids][]", type:  "hidden", :value => current_user.id}
             - else
+              %input{class: "chat-group-users__input",name:  "group[user_ids][]", type:  "hidden", :value => mem.id}
               %p.chat-group-current-user__name
                 = mem.name
                 .a_delete_button
